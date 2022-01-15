@@ -17,7 +17,7 @@
     </header>
     <main>
         <div>
-            <form>
+            <form action="\form">
                 <div>
                     <label for="fname">First name: </label>
                     <input type="text" name="fname" id="fname" minlength="1" maxlength="32" required>
@@ -27,7 +27,7 @@
                 <div>
                     <p>Select a race:</p>
                     <div>
-                        <input type="radio" name="race" id="5k">
+                        <input type="radio" name="race" id="5k" checked>
                         <label for="race">"Fun" Run 5k</label>
                     </div>
                     <div>
@@ -44,6 +44,20 @@
                     <input type="email" name="email" id="email" required>
                     <label for="password">Password: </label>
                     <input type="password" name="password" id="password" minlength="8" maxlength="32" required>
+                </div>
+                <div>
+                    <label for="age">Select Age Group</label>
+                    <select name="age" id="age" required>
+                        <option value="u18">under 18</option>
+                        <option value="20s">19 - 29</option>
+                        <option value="30s">30 - 39</option>
+                        <option value="40s">40 - 49</option>
+                        <option value="50s">50 - 59</option>
+                        <option value="oldies">60+</option>
+                    </select>
+                </div>
+                <div>
+                    <button>Register!</button>
                 </div>
             </form>
         </div>
