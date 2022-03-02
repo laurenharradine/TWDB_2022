@@ -1,18 +1,15 @@
-const btn = document.querySelector('button');
+const form = document.querySelector("#itemForm");
+const item = document.querySelector("#product");
+const qty = document.querySelector("#qty");
+const list = document.querySelector("#list");
 
-btn.addEventListener('click', function () {
-
-  const rgb = randColour();
-  const h1 = document.querySelector('h1');
-  
-  h1.innerText = rgb;
-  document.body.style.backgroundColor = rgb; 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  // console.log(item.value);
+  const itemName = `${qty.value} ${item.value}s`; 
+  const newItem = document.createElement("li");
+  newItem.innerText = itemName;
+  list.appendChild(newItem);
+  qty.value = "";
+  item.value = "";
 })
-
-const randColour = () => {
-  const r = Math.floor(Math.random() * 255);
-  const g = Math.floor(Math.random() * 255);
-  const b = Math.floor(Math.random() * 255);
-
-  return `rgb(${r},${g},${b})`
-}
