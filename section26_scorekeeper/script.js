@@ -5,8 +5,15 @@ const p2Display = document.querySelector("#p2Display");
 
 let p1Score = 0;
 let p2Score = 0;
+// not const so that winning score can be changed
+let winningScore = 5;
 
 p1Button.addEventListener('click', function() {
     p1Score += 1;
     p1Display.textContent = p1Score;
+});
+
+p2Button.addEventListener('click', function() {
+    p2Score += 1;
+    p2Display.textContent = p2Score;
 });
