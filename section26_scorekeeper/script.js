@@ -8,7 +8,7 @@ const winningScoreSelect = document.querySelector("#playTo");
 let p1Score = 0;
 let p2Score = 0;
 // not const so that winning score can be changed
-let winningScore = 5;
+let winningScore = 3;
 let isGameOver = false;
 
 p1Button.addEventListener('click', function() {
@@ -32,13 +32,17 @@ p2Button.addEventListener('click', function() {
 });
 
 winningScoreSelect.addEventListener('change', function () {
-    alert("CHANGE");
+    // because this.value is a string
+    winningScore = parseInt(this.value);
+    reset();
 });
 
-resetButton.addEventListener('click', function () {
+resetButton.addEventListener('click', reset);
+
+function reset() {
     isGameOver = false;
     p1Score = 0;
     p2Score = 0;
     p1Display.textContent = p1Score;
     p2Display.textContent = p2Score;
-})
+}
